@@ -1,0 +1,184 @@
+@font-face {
+  font-family: "logo";
+  src: url("QabilFreeTrial-6Ydv1.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "hand-writing";
+  src: url("Caveat-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "cross";
+  src: url("Pangolin-Regular.ttf") format("truetype");
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0%;
+}
+
+:root {
+  font-family: sans-serif;
+  font-size: 12pt;
+  line-height: 1.4;
+
+  --color-bg: rgb(244, 183, 210);
+  --color-white: #edf5e1;
+  --color-white-trans: #edf5e1c4;
+  --color-focus: #43075e;
+  --color-red: #e85a4f;
+  --color-black: #56585c;
+}
+
+/* background pattern */
+body {
+  color: var(--color-black);
+
+  background: linear-gradient(135deg, var(--color-bg) 25%, transparent 25%) -50px
+      0,
+    linear-gradient(225deg, var(--color-bg) 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, var(--color-bg) 25%, transparent 25%),
+    linear-gradient(45deg, var(--color-bg) 25%, transparent 25%);
+  background-size: 2em 2em;
+  background-color: var(--color-white);
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  margin: 30px 60px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-white-trans);
+  padding-bottom: 50px;
+  width: 550px;
+  border-radius: 20px;
+}
+
+@media only screen and (max-width: 550px) {
+  .layout {
+    margin: 30px 0;
+  }
+  .container {
+    width: 100%;
+  }
+}
+
+.title {
+  font-family: "logo";
+  font-size: 80px;
+  color: var(--color-focus);
+  line-height: 120px;
+}
+
+.input-form,
+table {
+  width: 80%;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+  height: 70px;
+}
+
+.task-area {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.task-input,
+.add-btn {
+  height: 28px;
+  border-radius: 3px;
+  border: 1px solid var(--color-focus);
+}
+
+.task-input {
+  width: calc(100% - 110px);
+  padding-left: 5px;
+}
+
+.add-btn {
+  width: 105px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.add-btn span {
+  color: var(--color-focus);
+  letter-spacing: 0.8px;
+  z-index: 2;
+}
+
+#translate {
+  transform: rotate(50deg);
+  width: 200%;
+  height: 290%;
+  left: -200px;
+  top: -50px;
+  background: var(--color-focus);
+  position: absolute;
+  transition: all 0.3s ease-Out;
+}
+
+.add-btn:hover #translate {
+  left: -73px;
+}
+
+.add-btn:hover span {
+  color: var(--color-white);
+}
+
+.warning {
+  color: var(--color-red);
+  line-height: 35px;
+  padding-left: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  text-align: center;
+  color: var(--color-black);
+}
+
+tr,
+td {
+  padding: 5px;
+}
+
+tr {
+  border-bottom: 1px solid var(--color-focus);
+}
+
+td {
+  font-family: "hand-writing";
+  font-size: 1.2rem;
+}
+
+.task {
+  text-align: left;
+}
+
+.delete a {
+  font-family: "cross";
+  color: var(--color-white);
+  background-color: var(--color-red);
+  padding: 1px 6px;
+  border-radius: 3px;
+  text-decoration: none;
+}
